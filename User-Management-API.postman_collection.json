@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "User Management System API",
-    "description": "Complete CRUD API for User Management System built with NestJS",
+    "name": "User Management API",
+    "description": "Complete CRUD API for User Management built with NestJS",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -20,7 +20,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"firstName\": \"Sarah\",\n  \"lastName\": \"Connor\",\n  \"gender\": \"female\",\n  \"dateOfBirth\": \"1985-05-20\",\n  \"email\": \"sarah.connor@example.com\",\n  \"phoneNumber\": \"9876543210\",\n  \"location\": \"Store D\"\n}"
+              "raw": "{\n  \"firstName\": \"chen\",\n  \"lastName\": \"shiyi\",\n  \"gender\": \"female\",\n  \"dateOfBirth\": \"1998-03-15\",\n  \"email\": \"chenshiyi@test.com\",\n  \"phoneNumber\": \"13700001111\",\n  \"location\": \"store d\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/users",
@@ -37,7 +37,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"firstName\": \"Sarah\",\n  \"lastName\": \"Connor\",\n  \"gender\": \"female\",\n  \"dateOfBirth\": \"1985-05-20\",\n  \"email\": \"sarah.connor@example.com\",\n  \"phoneNumber\": \"9876543210\",\n  \"location\": \"Store D\"\n}"
+                  "raw": "{\n  \"firstName\": \"chen\",\n  \"lastName\": \"shiyi\",\n  \"gender\": \"female\",\n  \"dateOfBirth\": \"1998-03-15\",\n  \"email\": \"chenshiyi@test.com\",\n  \"phoneNumber\": \"13700001111\",\n  \"location\": \"store d\"\n}"
                 },
                 "url": {
                   "raw": "{{baseUrl}}/users",
@@ -49,7 +49,7 @@
               "code": 201,
               "_postman_previewlanguage": "json",
               "header": [],
-              "body": "{\n  \"id\": 13,\n  \"firstName\": \"Sarah\",\n  \"lastName\": \"Connor\",\n  \"gender\": \"female\",\n  \"dateOfBirth\": \"1985-05-20\",\n  \"email\": \"sarah.connor@example.com\",\n  \"phoneNumber\": \"9876543210\",\n  \"location\": \"Store D\",\n  \"createdAt\": \"2024-12-02T10:30:00.000Z\",\n  \"updatedAt\": \"2024-12-02T10:30:00.000Z\"\n}"
+              "body": "{\n  \"id\": 9,\n  \"firstName\": \"chen\",\n  \"lastName\": \"shiyi\",\n  \"gender\": \"female\",\n  \"dateOfBirth\": \"1998-03-15\",\n  \"email\": \"chenshiyi@test.com\",\n  \"phoneNumber\": \"13700001111\",\n  \"location\": \"store d\",\n  \"createdAt\": \"2025-12-02T10:30:00.000Z\",\n  \"updatedAt\": \"2025-12-02T10:30:00.000Z\"\n}"
             },
             {
               "name": "Error - Duplicate Email",
@@ -58,7 +58,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"gender\": \"male\",\n  \"dateOfBirth\": \"1990-01-15\",\n  \"email\": \"john.doe@example.com\",\n  \"phoneNumber\": \"1234567890\",\n  \"location\": \"Store A\"\n}"
+                  "raw": "{\n  \"firstName\": \"zhang\",\n  \"lastName\": \"san\",\n  \"gender\": \"male\",\n  \"dateOfBirth\": \"1990-01-01\",\n  \"email\": \"zhangsan@test.com\",\n  \"phoneNumber\": \"13812345678\",\n  \"location\": \"store a\"\n}"
                 },
                 "url": {
                   "raw": "{{baseUrl}}/users",
@@ -70,7 +70,7 @@
               "code": 409,
               "_postman_previewlanguage": "json",
               "header": [],
-              "body": "{\n  \"statusCode\": 409,\n  \"message\": \"User with email john.doe@example.com already exists\",\n  \"error\": \"Conflict\"\n}"
+              "body": "{\n  \"statusCode\": 409,\n  \"message\": \"User with email zhangsan@test.com already exists\",\n  \"error\": \"Conflict\"\n}"
             }
           ]
         },
@@ -80,7 +80,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/users?page=1&limit=10",
+              "raw": "{{baseUrl}}/users?page=1&limit=5",
               "host": ["{{baseUrl}}"],
               "path": ["users"],
               "query": [
@@ -91,8 +91,8 @@
                 },
                 {
                   "key": "limit",
-                  "value": "10",
-                  "description": "Items per page (default: 10, max: 100)"
+                  "value": "5",
+                  "description": "Items per page (default: 5, max: 100)"
                 }
               ]
             },
@@ -105,7 +105,7 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{baseUrl}}/users?page=1&limit=10",
+                  "raw": "{{baseUrl}}/users?page=1&limit=5",
                   "host": ["{{baseUrl}}"],
                   "path": ["users"],
                   "query": [
@@ -115,7 +115,7 @@
                     },
                     {
                       "key": "limit",
-                      "value": "10"
+                      "value": "5"
                     }
                   ]
                 }
@@ -124,7 +124,7 @@
               "code": 200,
               "_postman_previewlanguage": "json",
               "header": [],
-              "body": "{\n  \"data\": [\n    {\n      \"id\": 1,\n      \"firstName\": \"John\",\n      \"lastName\": \"Doe\",\n      \"gender\": \"male\",\n      \"dateOfBirth\": \"1990-01-15\",\n      \"email\": \"john.doe@example.com\",\n      \"phoneNumber\": \"1234567890\",\n      \"location\": \"Store A\",\n      \"createdAt\": \"2024-01-01T00:00:00.000Z\",\n      \"updatedAt\": \"2024-01-01T00:00:00.000Z\"\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"limit\": 10,\n    \"totalItems\": 12,\n    \"totalPages\": 2\n  }\n}"
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 1,\n      \"firstName\": \"zhang\",\n      \"lastName\": \"san\",\n      \"gender\": \"male\",\n      \"dateOfBirth\": \"1990-01-01\",\n      \"email\": \"zhangsan@test.com\",\n      \"phoneNumber\": \"13812345678\",\n      \"location\": \"store a\",\n      \"createdAt\": \"2025-12-02T00:00:00.000Z\",\n      \"updatedAt\": \"2025-12-02T00:00:00.000Z\"\n    },\n    {\n      \"id\": 2,\n      \"firstName\": \"li\",\n      \"lastName\": \"si\",\n      \"gender\": \"male\",\n      \"dateOfBirth\": \"1991-01-01\",\n      \"email\": \"lisi@test.com\",\n      \"phoneNumber\": \"13698765432\",\n      \"location\": \"store b\",\n      \"createdAt\": \"2025-12-02T00:00:00.000Z\",\n      \"updatedAt\": \"2025-12-02T00:00:00.000Z\"\n    },\n    {\n      \"id\": 3,\n      \"firstName\": \"wang\",\n      \"lastName\": \"wu\",\n      \"gender\": \"female\",\n      \"dateOfBirth\": \"1992-01-01\",\n      \"email\": \"wangwu@test.com\",\n      \"phoneNumber\": \"15012348765\",\n      \"location\": \"store a\",\n      \"createdAt\": \"2025-12-02T00:00:00.000Z\",\n      \"updatedAt\": \"2025-12-02T00:00:00.000Z\"\n    },\n    {\n      \"id\": 4,\n      \"firstName\": \"zhao\",\n      \"lastName\": \"liu\",\n      \"gender\": \"male\",\n      \"dateOfBirth\": \"1993-01-01\",\n      \"email\": \"zhaoliu@test.com\",\n      \"phoneNumber\": \"13511112222\",\n      \"location\": \"store c\",\n      \"createdAt\": \"2025-12-02T00:00:00.000Z\",\n      \"updatedAt\": \"2025-12-02T00:00:00.000Z\"\n    },\n    {\n      \"id\": 5,\n      \"firstName\": \"sun\",\n      \"lastName\": \"qi\",\n      \"gender\": \"female\",\n      \"dateOfBirth\": \"1994-01-01\",\n      \"email\": \"sunqi@test.com\",\n      \"phoneNumber\": \"13922223333\",\n      \"location\": \"store b\",\n      \"createdAt\": \"2025-12-02T00:00:00.000Z\",\n      \"updatedAt\": \"2025-12-02T00:00:00.000Z\"\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"limit\": 5,\n    \"totalItems\": 8,\n    \"totalPages\": 2\n  }\n}"
             }
           ]
         },
@@ -156,7 +156,7 @@
               "code": 200,
               "_postman_previewlanguage": "json",
               "header": [],
-              "body": "{\n  \"id\": 1,\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"gender\": \"male\",\n  \"dateOfBirth\": \"1990-01-15\",\n  \"email\": \"john.doe@example.com\",\n  \"phoneNumber\": \"1234567890\",\n  \"location\": \"Store A\",\n  \"createdAt\": \"2024-01-01T00:00:00.000Z\",\n  \"updatedAt\": \"2024-01-01T00:00:00.000Z\"\n}"
+              "body": "{\n  \"id\": 1,\n  \"firstName\": \"zhang\",\n  \"lastName\": \"san\",\n  \"gender\": \"male\",\n  \"dateOfBirth\": \"1990-01-01\",\n  \"email\": \"zhangsan@test.com\",\n  \"phoneNumber\": \"13812345678\",\n  \"location\": \"store a\",\n  \"createdAt\": \"2025-12-02T00:00:00.000Z\",\n  \"updatedAt\": \"2025-12-02T00:00:00.000Z\"\n}"
             },
             {
               "name": "Error - User Not Found",
@@ -189,7 +189,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"location\": \"Store Z - Updated\",\n  \"phoneNumber\": \"1111111111\"\n}"
+              "raw": "{\n  \"location\": \"store a - updated\",\n  \"phoneNumber\": \"13800001111\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/users/1",
@@ -206,7 +206,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"location\": \"Store Z - Updated\",\n  \"phoneNumber\": \"1111111111\"\n}"
+                  "raw": "{\n  \"location\": \"store a - updated\",\n  \"phoneNumber\": \"13800001111\"\n}"
                 },
                 "url": {
                   "raw": "{{baseUrl}}/users/1",
@@ -218,7 +218,7 @@
               "code": 200,
               "_postman_previewlanguage": "json",
               "header": [],
-              "body": "{\n  \"id\": 1,\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"gender\": \"male\",\n  \"dateOfBirth\": \"1990-01-15\",\n  \"email\": \"john.doe@example.com\",\n  \"phoneNumber\": \"1111111111\",\n  \"location\": \"Store Z - Updated\",\n  \"createdAt\": \"2024-01-01T00:00:00.000Z\",\n  \"updatedAt\": \"2024-12-02T10:35:00.000Z\"\n}"
+              "body": "{\n  \"id\": 1,\n  \"firstName\": \"zhang\",\n  \"lastName\": \"san\",\n  \"gender\": \"male\",\n  \"dateOfBirth\": \"1990-01-01\",\n  \"email\": \"zhangsan@test.com\",\n  \"phoneNumber\": \"13800001111\",\n  \"location\": \"store a - updated\",\n  \"createdAt\": \"2025-12-02T00:00:00.000Z\",\n  \"updatedAt\": \"2025-12-02T10:35:00.000Z\"\n}"
             }
           ]
         },
@@ -228,9 +228,9 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/users/12",
+              "raw": "{{baseUrl}}/users/8",
               "host": ["{{baseUrl}}"],
-              "path": ["users", "12"]
+              "path": ["users", "8"]
             },
             "description": "Delete a user by their ID. Returns 204 No Content on success."
           },
@@ -241,9 +241,9 @@
                 "method": "DELETE",
                 "header": [],
                 "url": {
-                  "raw": "{{baseUrl}}/users/12",
+                  "raw": "{{baseUrl}}/users/8",
                   "host": ["{{baseUrl}}"],
-                  "path": ["users", "12"]
+                  "path": ["users", "8"]
                 }
               },
               "status": "No Content",
